@@ -8,7 +8,11 @@ public partial class _Default : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
         string sqlExpression = "INSERT INTO Files (Filepath) VALUES (@filepath)";
-        string connectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;       
+        string connectionString = ConfigurationManager.ConnectionStrings["DefConnection"].ConnectionString;
+
+        byte[] data = Request.BinaryRead(Request.ContentLength);
+
+        Response.Write(data.Length);
 
         if (Request.Files.Count > 0)
         {
@@ -18,10 +22,10 @@ public partial class _Default : System.Web.UI.Page
             string filepath = Server.MapPath("~/Files/" + filename);
 
             file.SaveAs(filepath);
-            uploadDB(filepath, connectionString, sqlExpression);
+            uploadDB(filepath, connectionString, sqlExpression);           
 
-            textBox.Text = "Фотография успешно загружена!";
-        }                
+            Response.Write("залупа загружена");
+        } 	       
     }   
 
     void uploadDB(string filepath, string connectionString, string sqlExpression)
