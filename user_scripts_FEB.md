@@ -5,6 +5,7 @@
 ### Группа: 11МИ1
 ### Электронная почта: 1ev6in4@gmail.com
 ### VK: https://vk.com/id309064831
+### YouTube: https://www.youtube.com/watch?v=vgCgevsu610&feature=youtu.be
 
 
 ## **[ Сценарий 1 - Регистрация / Вход пользователей** ]
